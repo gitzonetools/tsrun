@@ -1,0 +1,24 @@
+{
+  "name": "tsrun",
+  "version": "1.0.1",
+  "description": "run typescript programs efficiently",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "Lossless GmbH",
+  "license": "MIT",
+  "bin": {
+    "tsrun": "dist/cli.js"
+  },
+  "scripts": {
+    "test": "(npmts --notest && node dist/cli.js -d test/test.ts)",
+    "format": "(gitzone format)",
+    "build": "echo \"Not needed for now\""
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@types/node": "^10.3.0",
+    "ts-node": "^6.1.0",
+    "typescript": "^2.9.1"
+  },
+  "private": false
+}

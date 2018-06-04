@@ -1,0 +1,12 @@
+{
+  "npmts": {
+    "cli": true
+  },
+  "npmci": {
+    "npmGlobalTools": [
+      "@gitzone/npmts",
+      "ts-node"
+    ],
+    "npmAccessLevel": "public"
+  }
+}

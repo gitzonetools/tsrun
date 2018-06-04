@@ -1,5 +1,5 @@
 {
-  "name": "tsrun",
+  "name": "@gitzone/tsrun",
   "version": "1.0.2",
   "description": "run typescript programs efficiently",
   "main": "dist/index.js",

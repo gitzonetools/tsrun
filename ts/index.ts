@@ -8,6 +8,11 @@ tsNode.register({
 });
 
 if (process.env.CLI_CALL) {
-  const pathToLoad = path.join(process.cwd(), process.argv.pop());
+  // contents of argv array
+  // process.argv[0] -> node Executable
+  // process.argv[1] -> tsrun executable
+  const pathToTsFile = process.argv[2]
+  
+  const pathToLoad = path.join(process.cwd(), pathToTsFile);
   import(pathToLoad);
 }

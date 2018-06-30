@@ -5,7 +5,8 @@ tsNode.register({
   compilerOptions: {
     lib: [ 'es2016', 'es2017' ]
   },
-  ignore: ['^(.(.*\.d\.ts))*$']
+  ignore: [],
+  cacheDirectory: path.join(__dirname, '../tscache')
 });
 
 if (process.env.CLI_CALL_TSRUN) {

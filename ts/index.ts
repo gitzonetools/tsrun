@@ -7,7 +7,7 @@ tsNode.register({
   }
 });
 
-if (process.env.CLI_CALL) {
+if (process.env.CLI_CALL_TSRUN) {
   // contents of argv array
   // process.argv[0] -> node Executable
   // process.argv[1] -> tsrun executable

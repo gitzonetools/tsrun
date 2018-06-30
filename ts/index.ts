@@ -4,7 +4,8 @@ import * as path from 'path';
 tsNode.register({
   compilerOptions: {
     lib: [ 'es2016', 'es2017' ]
-  }
+  },
+  ignore: []
 });
 
 if (process.env.CLI_CALL_TSRUN) {

@@ -5,7 +5,7 @@ tsNode.register({
   compilerOptions: {
     lib: [ 'es2016', 'es2017' ]
   },
-  ignore: []
+  ignore: ['^(.(.*\.d\.ts))*$']
 });
 
 if (process.env.CLI_CALL_TSRUN) {

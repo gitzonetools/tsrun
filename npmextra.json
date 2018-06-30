@@ -1,6 +1,5 @@
 {
   "npmts": {
-    "cli": true
   },
   "npmci": {
     "npmGlobalTools": [

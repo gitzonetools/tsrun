@@ -7,10 +7,10 @@
   "author": "Lossless GmbH",
   "license": "MIT",
   "bin": {
-    "tsrun": "dist/cli.js"
+    "tsrun": "./cli.js"
   },
   "scripts": {
-    "test": "(npmts --notest && node dist/cli.js test/test.ts)",
+    "test": "(npmts --notest && node ./cli.js test/test.ts)",
     "format": "(gitzone format)",
     "build": "echo \"Not needed for now\""
   },

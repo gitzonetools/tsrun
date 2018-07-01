@@ -13,7 +13,7 @@
     "test": "(npmts --notest && node ./cli.js test/test.ts)",
     "format": "(gitzone format)",
     "build": "echo \"Not needed for now\"",
-    "postinstall": "ts-node --ignore 'nothing' --compilerOptions '{\"lib\": [\"ES2015\"]}' scripts/postinstall.ts"
+    "postinstall": "ts-node --skip-ignore true --compilerOptions '{\"lib\": [\"ES2015\"]}' scripts/postinstall.ts"
   },
   "devDependencies": {
     "@types/node": "^10.3.0"

@@ -12,12 +12,14 @@
   "scripts": {
     "test": "(npmts --notest && node ./cli.js test/test.ts)",
     "format": "(gitzone format)",
-    "build": "echo \"Not needed for now\""
+    "build": "echo \"Not needed for now\"",
+    "postinstall": "ts-node --compilerOptions '{\"lib\": [\"ES2015\"]}' scripts/postinstall.ts"
   },
   "devDependencies": {
     "@types/node": "^10.3.0"
   },
   "dependencies": {
+    "smartfile": "^4.2.28",
     "ts-node": "^6.1.0",
     "typescript": "^2.9.1"
   },

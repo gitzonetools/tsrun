@@ -7,4 +7,4 @@ const run = async () => {
   await smartfile.fs.ensureEmptyDir(tsCacheDir);
 }
 
-run()
+run();

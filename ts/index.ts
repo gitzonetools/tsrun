@@ -1,11 +1,11 @@
-import * as tsNode from 'ts-node';
 import * as path from 'path';
+import * as tsNode from './tsnode';
 
 tsNode.register({
   compilerOptions: {
     lib: [ 'es2016', 'es2017' ]
   },
-  ignore: ['^(.(.*\.d\.ts))*$'],
+  skipIgnore: true,
   cacheDirectory: path.join(__dirname, '../tscache')
 });
 

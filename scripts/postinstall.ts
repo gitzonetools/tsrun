@@ -4,12 +4,7 @@ import * as path from 'path';
 
 const run = async () => {
   const tsCacheDir = path.join(__dirname, '../tscache');
-  const tsCacheFiles: string[] = await smartfile.fs.listFolders(tsCacheDir) as any;
-  for(const dir of tsCacheFiles) {
-    console.log(`Removing cache directory ${dir}`);
-    let dirToRemove = path.join(tsCacheDir, dir);
-    await smartfile.fs.removeSync(dirToRemove);
-  }
+  await smartfile.fs.ensureEmptyDir(tsCacheDir);
 }
 
 run()

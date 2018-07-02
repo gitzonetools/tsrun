@@ -1,5 +1,5 @@
 import * as path from 'path';
-import * as tsNode from './tsnode';
+import * as tsNode from 'ts-node';
 
 tsNode.register({
   compilerOptions: {

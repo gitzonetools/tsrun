@@ -16,7 +16,7 @@
     "postinstall": "(node ./cli.js scripts/postinstall.ts)"
   },
   "devDependencies": {
-    "@types/node": "^10.3.0"
+    "@types/node": "^10.5.1"
   },
   "dependencies": {
     "smartfile": "^4.2.28",

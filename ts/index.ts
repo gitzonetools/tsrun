@@ -1,13 +1,20 @@
 import * as path from 'path';
 import * as tsNode from 'ts-node';
 
-tsNode.register({
+const defaultTsNodeOptions: tsNode.Options = {
   compilerOptions: {
-    lib: [ 'es2016', 'es2017' ]
+    lib: ['es2016','es2017'],
+    target: 'es2015',
   },
   skipIgnore: true,
   cacheDirectory: path.join(__dirname, '../tscache')
-});
+}
+
+if (process.argv.includes('--nocache')) {
+  defaultTsNodeOptions.cache = false;
+}
+
+tsNode.register(defaultTsNodeOptions);
 
 if (process.env.CLI_CALL_TSRUN) {
   // contents of argv array

@@ -1,10 +1,12 @@
 import * as path from 'path';
 import * as tsNode from 'ts-node';
+import { CompilerOptions } from 'typescript';
 
 const defaultTsNodeOptions: tsNode.Options = {
-  compilerOptions: {
+  compilerOptions: <CompilerOptions>{
     lib: ['es2016', 'es2017'],
-    target: 'es2015'
+    target: <any>'es2015', // Script Target should be a string -> 2 is for ES2015
+    experimentalDecorators: true
   },
   skipIgnore: true,
   cacheDirectory: path.join(__dirname, '../tscache')

@@ -118,6 +118,7 @@ pages:
   stage: metadata
   script:
     - npmci command npm install -g typedoc
+    - npmci npm install
     - npmci command typedoc --out public/ ts/
   tags:
     - docker

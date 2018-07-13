@@ -1,5 +1,5 @@
 // This file takes care of some postinstall actions like clearing the TypeScript cache.
-import * as smartfile from 'smartfile';
+import * as smartfile from '@pushrocks/smartfile';
 import * as path from 'path';
 
 const run = async () => {

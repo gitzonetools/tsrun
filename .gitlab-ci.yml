@@ -117,9 +117,9 @@ pages:
   image: hosttoday/ht-docker-node:npmci
   stage: metadata
   script:
-    - npmci command npm install -g typedoc
+    - npmci command npm install -g typedoc typescript
     - npmci npm install
-    - npmci command typedoc --out public/ ts/
+    - npmci command typedoc --target "ES6" --out public/ ts/
   tags:
     - docker
     - notpriv

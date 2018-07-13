@@ -117,8 +117,8 @@ pages:
   image: hosttoday/ht-docker-node:npmci
   stage: metadata
   script:
-    - npmci command npm install -g npmpage
-    - npmci command npmpage
+    - npmci command npm install -g typedoc
+    - npmci command typedoc --out public/ ts/
   tags:
     - docker
     - notpriv

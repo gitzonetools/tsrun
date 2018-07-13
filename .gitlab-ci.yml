@@ -119,7 +119,7 @@ pages:
   script:
     - npmci command npm install -g typedoc typescript
     - npmci npm install
-    - npmci command typedoc --target "ES6" --out public/ ts/
+    - npmci command typedoc --module "commonjs" --target "ES2016" --out public/ ts/
   tags:
     - docker
     - notpriv

@@ -1,17 +1,27 @@
-import * as path from 'path';
-import * as tsNode from 'ts-node';
+import * as path from "path";
+import * as tsNode from "ts-node";
+
+const tsCacheDir = path.join(__dirname, "../tscache");
 
 const defaultTsNodeOptions: tsNode.Options = {
   compilerOptions: {
-    lib: ['es2016', 'es2017'],
-    target: 'es2015'
+    lib: ["es2016", "es2017"],
+    target: "es2015"
   },
   skipIgnore: true,
-  cacheDirectory: path.join(__dirname, '../tscache')
+  cacheDirectory: tsCacheDir
 };
 
-if (process.argv.includes('--nocache')) {
+// check wether a cache is feasible
+if (process.argv.includes("--nocache")) {
   defaultTsNodeOptions.cache = false;
+} else {
+  var fs = require('fs');
+  fs.access(tsCacheDir, fs.constants.W_OK, function(err) {
+    if (err) {
+      defaultTsNodeOptions.cache = false;
+    }
+  });
 }
 
 tsNode.register(defaultTsNodeOptions);

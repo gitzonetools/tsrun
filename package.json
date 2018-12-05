@@ -16,7 +16,9 @@
     "postinstall": "(node ./cli.js scripts/postinstall.ts)"
   },
   "devDependencies": {
-    "@types/node": "^10.5.7"
+    "@types/node": "^10.5.7",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0"
   },
   "dependencies": {
     "@gitzone/tsbuild": "^2.0.22",

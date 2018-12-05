@@ -12,6 +12,14 @@ const defaultTsNodeOptions: tsNode.Options = {
   cacheDirectory: path.join(__dirname, '../tscache')
 };
 
+if (process.argv.includes('--web')) {
+  const previousCompilerOptions = defaultTsNodeOptions.compilerOptions as CompilerOptions;
+  defaultTsNodeOptions.compilerOptions = {
+    ...previousCompilerOptions,
+    lib: [previousCompilerOptions.lib, 'dom']
+  }
+}
+
 if (process.argv.includes('--nocache')) {
   defaultTsNodeOptions.cache = false;
 }

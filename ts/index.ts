@@ -16,7 +16,7 @@ if (process.argv.includes('--web')) {
   const previousCompilerOptions = defaultTsNodeOptions.compilerOptions as CompilerOptions;
   defaultTsNodeOptions.compilerOptions = {
     ...previousCompilerOptions,
-    lib: [previousCompilerOptions.lib, 'dom']
+    lib: [...previousCompilerOptions.lib, 'dom']
   }
 }
 

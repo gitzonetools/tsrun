@@ -25,6 +25,16 @@ run typescript programs efficiently
 
 Use TypeScript for best in class instellisense.
 
+To simply run a TypeScript file on the fly type
+
+```typescript
+tsrun myfiletorun.ts
+```
+
+There are two options available:
+* `--nocache` will disable any caching. Caching speeds up execution, but causes problems in read only environments (e.g. sometimes docker containers are readonly)
+* `--web` will inject browser types. this is useful when testing code with polyfills on node, but that is meant for the browser later on.
+
 For further information read the linked docs at the top of this README.
 
 > licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)

@@ -1,8 +1,17 @@
 {
-  "npmts": {
-  },
+  "npmts": {},
   "npmci": {
     "npmGlobalTools": [],
     "npmAccessLevel": "public"
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "gitzone",
+      "gitrepo": "tsrun",
+      "shortDescription": "run typescript programs efficiently",
+      "npmPackagename": "@gitzone/tsrun",
+      "license": "MIT"
+    }
   }
 }

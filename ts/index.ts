@@ -16,7 +16,7 @@ if (process.argv.includes('--web')) {
   defaultTsNodeOptions.compilerOptions = {
     ...previousCompilerOptions,
     lib: [...previousCompilerOptions.lib, 'dom']
-  }
+  };
 }
 
 if (process.argv.includes('--nocache')) {

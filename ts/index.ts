@@ -8,8 +8,7 @@ const defaultTsNodeOptions: tsNode.Options = {
     target: <any>'es2015', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true
   },
-  skipIgnore: true,
-  cacheDirectory: path.join(__dirname, '../tscache')
+  skipIgnore: true
 };
 
 if (process.argv.includes('--web')) {
@@ -21,7 +20,7 @@ if (process.argv.includes('--web')) {
 }
 
 if (process.argv.includes('--nocache')) {
-  defaultTsNodeOptions.cache = false;
+  // currently caching is not used
 }
 
 tsNode.register(defaultTsNodeOptions);

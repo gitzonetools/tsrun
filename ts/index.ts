@@ -5,7 +5,7 @@ import { CompilerOptions } from 'typescript';
 const defaultTsNodeOptions: tsNode.Options = {
   compilerOptions: <CompilerOptions>{
     lib: ['es2016', 'es2017'],
-    target: <any>'es2015', // Script Target should be a string -> 2 is for ES2015
+    target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true
   },
   skipIgnore: true
@@ -15,7 +15,8 @@ if (process.argv.includes('--web')) {
   const previousCompilerOptions = defaultTsNodeOptions.compilerOptions as CompilerOptions;
   defaultTsNodeOptions.compilerOptions = {
     ...previousCompilerOptions,
-    lib: [...previousCompilerOptions.lib, 'dom']
+    lib: ['es2016', 'es2017', 'dom'],
+    target: <any>'es2015' // Script Target should be a string -> 2 is for ES2015
   };
 }
 

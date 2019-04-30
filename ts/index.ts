@@ -3,11 +3,12 @@ import * as tsNode from 'ts-node';
 import { CompilerOptions } from 'typescript';
 
 const defaultTsNodeOptions: tsNode.Options = {
-  compilerOptions: <CompilerOptions>{
-    lib: ['es2016', 'es2017'],
+  compilerOptions: {
+    lib: ['es2017'],
     target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015
-    experimentalDecorators: true
-  },
+    experimentalDecorators: true,
+    esModuleInterop: true
+  } as CompilerOptions,
   skipIgnore: true
 };
 

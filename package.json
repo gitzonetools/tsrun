@@ -25,5 +25,15 @@
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
-  "private": false
+  "private": false,
+  "files": [
+    "ts/*",
+    "ts_web/*",
+    "dist/*",
+    "dist_web/*",
+    "assets/*",
+    "cli.js",
+    "npmextra.json",
+    "readme.md"
+  ]
 }

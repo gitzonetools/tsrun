@@ -17,7 +17,7 @@ if (process.argv.includes('--web')) {
   defaultTsNodeOptions.compilerOptions = {
     ...previousCompilerOptions,
     lib: ['es2016', 'es2017', 'dom'],
-    target: <any>'es2015' // Script Target should be a string -> 2 is for ES2015
+    target: <any>'es2017' // Script Target should be a string -> 2 is for ES2015
   };
 }
 

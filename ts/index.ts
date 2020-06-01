@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as tsNode from 'ts-node';
 import { CompilerOptions } from 'typescript';
 
-const defaultTsNodeOptions: tsNode.Options = {
+const defaultTsNodeOptions: tsNode.CreateOptions = {
   compilerOptions: {
     lib: ['es2017'],
     target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015

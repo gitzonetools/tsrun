@@ -35,4 +35,4 @@ export const runCli = async () => {
 
   const pathToLoad = path.join(process.cwd(), pathToTsFile);
   import(pathToLoad);
-}
+};

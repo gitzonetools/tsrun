@@ -27,7 +27,7 @@ if (process.argv.includes('--nocache')) {
 
 tsNode.register(defaultTsNodeOptions);
 
-if (process.env.CLI_CALL_TSRUN) {
+export const runCli = async () => {
   // contents of argv array
   // process.argv[0] -> node Executable
   // process.argv[1] -> tsrun executable

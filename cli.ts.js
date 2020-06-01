@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 process.env.CLI_CALL = 'true';
-const cliTool = require('./dist_ts/index');
+require('@gitzone/tsrun');
+const cliTool = require('./ts/index');
 cliTool.runCli();

@@ -19,7 +19,7 @@ TypeScript Support | [![TypeScript](https://badgen.net/badge/TypeScript/>=%203.x
 node Support | [![node](https://img.shields.io/badge/node->=%2010.x.x-blue.svg)](https://nodejs.org/dist/latest-v10.x/docs/api/)
 Code Style | [![Code Style](https://badgen.net/badge/style/prettier/purple)](https://lossless.cloud)
 PackagePhobia (total standalone install weight) | [![PackagePhobia](https://badgen.net/packagephobia/install/@gitzone/tsrun)](https://lossless.cloud)
-PackagePhobia (package size on registry) | [![PackagePhobia](https://badgen.net/packagephobia/publish/@gitzone/tsrun)](https://lossless.cloud)
+PackagePhobia (package size on registry) | [![PackagePhobia](https://badgen.net/packagephobia/publish/@gitzone/tsrun)](https://lossless.cloud)
 BundlePhobia (total size when bundled) | [![BundlePhobia](https://badgen.net/bundlephobia/minzip/@gitzone/tsrun)](https://lossless.cloud)
 Platform support | [![Supports Windows 10](https://badgen.net/badge/supports%20Windows%2010/yes/green?icon=windows)](https://lossless.cloud) [![Supports Mac OS X](https://badgen.net/badge/supports%20Mac%20OS%20X/yes/green?icon=apple)](https://lossless.cloud)
 
@@ -36,7 +36,6 @@ tsrun myfiletorun.ts
 There are options available:
 
 - `--web` will inject browser types. this is useful when testing code with polyfills on node, but that is meant for the browser later on.
-
 
 ## Contribution
 

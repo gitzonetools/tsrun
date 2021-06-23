@@ -34,6 +34,8 @@ export const runCli = async () => {
   const pathToTsFile = process.argv[2];
 
   const pathToLoad = path.join(process.cwd(), pathToTsFile);
-  process.argv.shift();
+  console.log(process.argv);
+  process.argv.pop();
+  console.log(process.argv);
   import(pathToLoad);
 };

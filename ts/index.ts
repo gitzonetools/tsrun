@@ -4,7 +4,7 @@ import { CompilerOptions } from 'typescript';
 
 const defaultTsNodeOptions: tsNode.CreateOptions = {
   compilerOptions: {
-    lib: ['es2017'],
+    lib: ['es2016', 'es2017', 'dom'],
     target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true,
     esModuleInterop: true,
@@ -12,19 +12,6 @@ const defaultTsNodeOptions: tsNode.CreateOptions = {
   } as CompilerOptions,
   skipIgnore: true,
 };
-
-if (process.argv.includes('--web')) {
-  const previousCompilerOptions = defaultTsNodeOptions.compilerOptions as CompilerOptions;
-  defaultTsNodeOptions.compilerOptions = {
-    ...previousCompilerOptions,
-    lib: ['es2016', 'es2017', 'dom'],
-    target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015
-  };
-}
-
-if (process.argv.includes('--nocache')) {
-  // currently caching is not used
-}
 
 tsNode.register(defaultTsNodeOptions);
 
@@ -35,6 +22,7 @@ export const runCli = async () => {
   const pathToTsFile = process.argv[2];
 
   const pathToLoad = path.join(process.cwd(), pathToTsFile);
-  process.argv.pop();
+  process.argv.splice(2, 1);
+  console.log(process.argv);
   import(pathToLoad);
 };

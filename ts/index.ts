@@ -8,6 +8,7 @@ const defaultTsNodeOptions: tsNode.CreateOptions = {
     target: <any>'es2017', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true,
     esModuleInterop: true,
+    strictNullChecks: false,
   } as CompilerOptions,
   skipIgnore: true,
 };
@@ -34,8 +35,6 @@ export const runCli = async () => {
   const pathToTsFile = process.argv[2];
 
   const pathToLoad = path.join(process.cwd(), pathToTsFile);
-  console.log(process.argv);
   process.argv.pop();
-  console.log(process.argv);
   import(pathToLoad);
 };

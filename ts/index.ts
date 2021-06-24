@@ -23,6 +23,6 @@ export const runCli = async () => {
 
   const pathToLoad = path.join(process.cwd(), pathToTsFile);
   process.argv.splice(2, 1);
-  console.log(process.argv);
+  // console.log(process.argv);
   import(pathToLoad);
 };

@@ -15,15 +15,16 @@
     "build": "(tsbuild)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.24",
-    "@types/node": "^15.12.4",
+    "@gitzone/tsbuild": "^2.1.27",
+    "@types/node": "^16.10.1",
+    "node-fetch": "^3.0.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
     "@pushrocks/smartfile": "^8.0.10",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.4"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
   },
   "private": false,
   "files": [

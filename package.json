@@ -4,6 +4,7 @@
   "description": "run typescript programs efficiently",
   "main": "dist_ts/index.js",
   "typings": "dist_ts/index.d.ts",
+  "type": "module",
   "author": "Lossless GmbH",
   "license": "MIT",
   "bin": {
@@ -15,7 +16,7 @@
     "build": "(tsbuild)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.29",
+    "@gitzone/tsbuild": "2.1.29",
     "@types/node": "^17.0.21",
     "node-fetch": "^3.2.2",
     "tslint": "^6.1.2",

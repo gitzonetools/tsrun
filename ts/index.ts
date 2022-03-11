@@ -14,6 +14,7 @@ const defaultTsNodeOptions: tsNode.CreateOptions = {
     importsNotUsedAsValues: <any>'preserve',
   } as CompilerOptions,
   skipIgnore: true,
+  esm: true,
 };
 
 tsNode.register(defaultTsNodeOptions);

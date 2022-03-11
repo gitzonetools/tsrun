@@ -4,12 +4,13 @@ import { CompilerOptions } from 'typescript';
 
 const defaultTsNodeOptions: tsNode.CreateOptions = {
   compilerOptions: {
-    lib: ['es2016', 'es2017', 'dom'],
+    lib: ['dom'],
     target: <any>'es2020', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true,
     esModuleInterop: true,
     strictNullChecks: false,
-    moduleResolution: <any>'node',
+    moduleResolution: <any>'node12',
+    module: <any>'es2020',
     importsNotUsedAsValues: <any>'preserve',
   } as CompilerOptions,
   skipIgnore: true,

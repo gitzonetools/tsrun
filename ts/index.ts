@@ -17,7 +17,10 @@ export const runCli = async (pathArg?: string) => {
     ? relativePathToTsFile
     : plugins.path.join(process.cwd(), relativePathToTsFile);
 
-  process.argv.splice(0, 3); // this ensures transparent arguments for the child process
+  // we want to have command line arguments available in the child process.
+  // when we have a path sepcified through a function there is one argeument less to pay respect to.
+  // thus when pathArg is specifed -> we only splice 2
+  pathArg? process.argv.splice(0, 2) : process.argv.splice(0, 3); // this ensures transparent arguments for the child process
 
   // lets setup things for execution
   const smartshellInstance = new plugins.smartshell.Smartshell({

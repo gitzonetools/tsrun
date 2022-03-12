@@ -19,6 +19,8 @@ export const runCli = async () => {
     executor: 'bash'
   });
 
+  // note: -> reduce on emtpy array does not work
+  // thus check needed before reducing the argv array
   smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${pathToLoad} ${process.argv.length > 0 ? process.argv.reduce((prevArg, currentArg) => {
     return prevArg + ' ' + currentArg;
   }) : ''}`);

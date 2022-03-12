@@ -1,11 +1,10 @@
 import * as plugins from './plugins.js';
+const __dirname = plugins.path.dirname(plugins.url.fileURLToPath(import.meta.url));
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-export const runPath = async (pathArg: string) => {
+export const runPath = async (pathArg: string, fromFileUrl?: string) => {
+  pathArg = fromFileUrl
+    ? plugins.path.join(plugins.path.dirname(plugins.url.fileURLToPath(fromFileUrl)), pathArg)
+    : pathArg;
   await runCli(pathArg);
 };
 

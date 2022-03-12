@@ -1,8 +1,10 @@
 // node native
 import * as path from 'path';
+import * as url from 'url';
 
 export {
-  path
+  path,
+  url
 }
 
 // @pushrocks scope

@@ -1,32 +1,27 @@
-import * as path from 'path';
-import * as tsNode from 'ts-node';
-import { CompilerOptions } from 'typescript';
+import * as plugins from './plugins.js';
 
-const defaultTsNodeOptions: tsNode.CreateOptions = {
-  compilerOptions: {
-    lib: ['dom'],
-    target: <any>'es2020', // Script Target should be a string -> 2 is for ES2015
-    experimentalDecorators: true,
-    esModuleInterop: true,
-    strictNullChecks: false,
-    moduleResolution: <any>'node12',
-    module: <any>'es2020',
-    importsNotUsedAsValues: <any>'preserve',
-  } as CompilerOptions,
-  skipIgnore: true,
-  esm: true,
-};
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-tsNode.register(defaultTsNodeOptions);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export const runCli = async () => {
   // contents of argv array
   // process.argv[0] -> node Executable
   // process.argv[1] -> tsrun executable
   const pathToTsFile = process.argv[2];
-
-  const pathToLoad = path.join(process.cwd(), pathToTsFile);
-  process.argv.splice(2, 1);
+  
+  const tsNodeLoaderPath = plugins.path.join(__dirname, 'loader.js')
+  const pathToLoad = plugins.path.join(process.cwd(), pathToTsFile);
+  process.argv.splice(0, 3);
   // console.log(process.argv);
-  import(pathToLoad);
+  
+  const smartshellInstance = new plugins.smartshell.Smartshell({
+    executor: 'bash'
+  });
+
+  smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${pathToLoad} ${process.argv.reduce((prevArg, currentArg) => {
+    return prevArg + ' ' + currentArg;
+  })}`);
+
 };

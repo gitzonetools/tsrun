@@ -1,3 +1,10 @@
+// node native
+import * as path from 'path';
+
+export {
+  path
+}
+
 // @pushrocks scope
 import * as smartshell from '@pushrocks/smartshell';
 
@@ -6,10 +13,8 @@ export {
 }
 
 // third party scope
-import * as path from 'path';
 import * as tsNode from 'ts-node';
 
 export {
-  path,
   tsNode
 }

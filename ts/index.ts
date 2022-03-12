@@ -19,8 +19,8 @@ export const runCli = async () => {
     executor: 'bash'
   });
 
-  smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${pathToLoad} ${process.argv.reduce((prevArg, currentArg) => {
+  smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${pathToLoad} ${process.argv.length > 0 ? process.argv.reduce((prevArg, currentArg) => {
     return prevArg + ' ' + currentArg;
-  })}`);
+  }) : ''}`);
 
 };

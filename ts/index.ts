@@ -13,8 +13,7 @@ export const runCli = async () => {
   
   const tsNodeLoaderPath = plugins.path.join(__dirname, 'loader.js')
   const pathToLoad = plugins.path.join(process.cwd(), pathToTsFile);
-  process.argv.splice(0, 3);
-  // console.log(process.argv);
+  process.argv.splice(0, 3); // this ensures transparent arguments for the child process
   
   const smartshellInstance = new plugins.smartshell.Smartshell({
     executor: 'bash'

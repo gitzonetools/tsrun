@@ -5,23 +5,30 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export const runCli = async () => {
+export const runPath = async (pathArg: string) => {
+  await runCli(pathArg);
+}
+
+export const runCli = async (pathArg?: string) => {
   // contents of argv array
   // process.argv[0] -> node Executable
   // process.argv[1] -> tsrun executable
-  const pathToTsFile = process.argv[2];
+  const relativePathToTsFile = pathArg ? pathArg : process.argv[2];
+  const absolutePathToTsFile = plugins.path.join(process.cwd(), relativePathToTsFile);
   
-  const tsNodeLoaderPath = plugins.path.join(__dirname, 'loader.js')
-  const pathToLoad = plugins.path.join(process.cwd(), pathToTsFile);
+  
   process.argv.splice(0, 3); // this ensures transparent arguments for the child process
   
+
+  // lets setup things for execution
   const smartshellInstance = new plugins.smartshell.Smartshell({
     executor: 'bash'
   });
 
+  const tsNodeLoaderPath = plugins.path.join(__dirname, 'loader.js')
   // note: -> reduce on emtpy array does not work
   // thus check needed before reducing the argv array
-  smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${pathToLoad} ${process.argv.length > 0 ? process.argv.reduce((prevArg, currentArg) => {
+  smartshellInstance.exec(`node --loader ${tsNodeLoaderPath} ${absolutePathToTsFile} ${process.argv.length > 0 ? process.argv.reduce((prevArg, currentArg) => {
     return prevArg + ' ' + currentArg;
   }) : ''}`);
 

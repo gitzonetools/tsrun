@@ -4,8 +4,9 @@ import type { CompilerOptions } from 'typescript';
 const defaultTsNodeOptions: plugins.tsNode.CreateOptions = {
   compilerOptions: {
     lib: ['dom'],
-    target: <any>'es2020', // Script Target should be a string -> 2 is for ES2015
+    target: <any>'es2022', // Script Target should be a string -> 2 is for ES2015
     experimentalDecorators: true,
+    useDefineForClassFields: false,
     esModuleInterop: true,
     strictNullChecks: false,
     moduleResolution: <any>'node12',

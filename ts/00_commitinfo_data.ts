@@ -3,6 +3,6 @@
  */
 export const commitinfo = {
   name: '@gitzone/tsrun',
-  version: '1.2.33',
+  version: '1.2.34',
   description: 'run typescript programs efficiently'
 }

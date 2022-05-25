@@ -9,7 +9,7 @@ const defaultTsNodeOptions: plugins.tsNode.CreateOptions = {
     useDefineForClassFields: false,
     esModuleInterop: true,
     strictNullChecks: false,
-    moduleResolution: <any>'node12',
+    moduleResolution: <any>'nodenext',
     module: <any>'ESNext',
     importsNotUsedAsValues: <any>'preserve',
   } as CompilerOptions,

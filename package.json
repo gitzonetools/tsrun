@@ -18,14 +18,14 @@
   "devDependencies": {
     "@gitzone/tsbuild": "^2.1.63",
     "@pushrocks/smartcli": "^3.0.14",
-    "@types/node": "^17.0.38",
-    "node-fetch": "^3.2.5"
+    "@types/node": "^17.0.42",
+    "node-fetch": "^3.2.6"
   },
   "dependencies": {
-    "@pushrocks/smartfile": "^9.0.6",
+    "@pushrocks/smartfile": "^10.0.2",
     "@pushrocks/smartshell": "^2.0.30",
-    "ts-node": "^10.8.0",
-    "typescript": "^4.7.2"
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
   },
   "private": false,
   "files": [
